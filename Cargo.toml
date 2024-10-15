@@ -1,0 +1,15 @@
+[package]
+name = "crossdb-rs-dylib"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "crossdb_rs_dylib"
+path = "src/lib.rs"
+
+[[example]]
+name = "basic"
+path = "examples/basic.rs"
+
+[build-dependencies]
+bindgen = "0.70.1"
