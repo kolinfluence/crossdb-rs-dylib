@@ -56,15 +56,16 @@ fn main() {
                 break;
             }
 
+            let res = *res;
             // Fetch and print each column with error checking
             for i in 0..3 {
                 match i {
                     0 | 2 => {
-                        let value = xdb_column_int(res as u64, row, i);
+                        let value = xdb_column_int(res.col_meta, row, i);
                         println!("Column {}: {}", i, value);
                     },
                     1 => {
-                        let ptr = xdb_column_str(res as u64, row, i);
+                        let ptr = xdb_column_str(res.col_meta, row, i);
                         if ptr.is_null() {
                             println!("Column {}: NULL", i);
                         } else {
@@ -106,14 +107,15 @@ fn main() {
                 println!("Error: Result set is null");
             } else {
                 // Fetch and print each column with error checking
+                let res = *res;
                 for i in 0..3 {
                     match i {
                         0 | 2 => {
-                            let value = xdb_column_int(res as u64, row, i);
+                            let value = xdb_column_int(res.col_meta, row, i);
                             println!("Column {}: {}", i, value);
                         },
                         1 => {
-                            let ptr = xdb_column_str(res as u64, row, i);
+                            let ptr = xdb_column_str(res.col_meta, row, i);
                             if ptr.is_null() {
                                 println!("Column {}: NULL", i);
                             } else {
@@ -158,14 +160,15 @@ fn main() {
             }
 
             // Fetch and print each column with error checking
+            let res = *res;
             for i in 0..3 {
                 match i {
                     0 | 2 => {
-                        let value = xdb_column_int(res as u64, row, i);
+                        let value = xdb_column_int(res.col_meta, row, i);
                         println!("Column {}: {}", i, value);
                     },
                     1 => {
-                        let ptr = xdb_column_str(res as u64, row, i);
+                        let ptr = xdb_column_str(res.col_meta, row, i);
                         if ptr.is_null() {
                             println!("Column {}: NULL", i);
                         } else {
@@ -218,14 +221,15 @@ fn main() {
                 println!("Error: Result set is null");
             } else {
                 // Fetch and print each column with error checking
+                let res = *res;
                 for i in 0..3 {
                     match i {
                         0 | 2 => {
-                            let value = xdb_column_int(res as u64, row, i);
+                            let value = xdb_column_int(res.col_meta, row, i);
                             println!("Column {}: {}", i, value);
                         },
                         1 => {
-                            let ptr = xdb_column_str(res as u64, row, i);
+                            let ptr = xdb_column_str(res.col_meta, row, i);
                             if ptr.is_null() {
                                 println!("Column {}: NULL", i);
                             } else {
